@@ -13,7 +13,6 @@ class Customer {
     this.phone = phone;
     this.notes = notes;
   }
-
   /** find all customers. */
 
   static async all() {
@@ -54,6 +53,10 @@ class Customer {
   }
 
   /** get all reservations for this customer. */
+
+  fullname() {
+    return this.firstName + " " + this.lastName
+  }
 
   async getReservations() {
     return await Reservation.getReservationsForCustomer(this.id);
